@@ -16,4 +16,11 @@ defmodule Convo.Router do
   scope "/", Convo do
     pipe_through :browser
   end
+
+  scope "/auth", Convo do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :index
+    get "/:provider/callback", AuthController, :callback
+  end
 end
