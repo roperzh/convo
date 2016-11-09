@@ -3,12 +3,20 @@ defmodule Convo.AuthController.CallbackTest do
 
   @moduletag controllers: :auth
 
-  test "GET /auth/mixcloud/callback", %{conn: conn} do
-    conn = get conn, auth_path(conn, :callback, "mixcloud"), %{
-      "code" => "2D2vkFS25B"
+  test "GET /auth/testprovider/callback", %{conn: conn} do
+    conn = get conn, auth_path(conn, :callback, "testprovider"), %{
+      "code" => "some-token"
     }
 
     assert get_session(conn, :access_token)
     assert redirected_to(conn) =~ "/"
+  end
+
+  test "raises an error if with an invalid provider", %{conn: conn} do
+    assert_raise ArgumentError, "argument error", fn ->
+      get conn, auth_path(conn, :callback, "invalid-provider"), %{
+        "code" => "some-token"
+      }
+    end
   end
 end

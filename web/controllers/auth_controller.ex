@@ -14,7 +14,7 @@ defmodule Convo.AuthController do
   end
 
   defp invoque(module, func, params \\ []) do
-    "Elixir.#{String.capitalize(module)}"
+    "Elixir.Oauth.#{String.capitalize(module)}"
     |> String.to_existing_atom
     |> apply(func, params)
   end

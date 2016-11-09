@@ -9,7 +9,7 @@ defmodule Convo.AuthController.IndexTest do
     assert redirected_to(conn) =~ "mixcloud.com/oauth/authorize"
   end
 
-  test "redirects to home page if the provider is invalid", %{conn: conn} do
+  test "raises an error if with an invalid provider", %{conn: conn} do
     assert_raise ArgumentError, "argument error", fn ->
       get conn, auth_path(conn, :index, "invalid-provider")
     end
