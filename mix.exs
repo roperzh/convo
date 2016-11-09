@@ -35,11 +35,14 @@ defmodule Convo.Mixfile do
   # Specifies your project dependencies.
   defp deps do
     [
+      # General dependencies
       {:phoenix, "~> 1.2.1"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_html, "~> 2.6"},
+      {:cowboy, "~> 1.0"},
+      # Dev depencencies
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:cowboy, "~> 1.0"}
+      {:mix_test_watch, "~> 0.2", only: :dev}
     ]
   end
 end
