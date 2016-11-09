@@ -26,7 +26,7 @@ defmodule Oauth.Mixcloud do
     OAuth2.Client.authorize_url!(client())
   end
 
-  def get_token!(params \\ [], headers \\ []) do
+  def get_token!(params \\ [], _headers \\ []) do
     OAuth2.Client.get_token!(client(), Keyword.merge(params, client_secret: client().client_secret))
   end
 
