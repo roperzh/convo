@@ -24,7 +24,8 @@ defmodule Convo.Mixfile do
         :phoenix_html,
         :cowboy,
         :logger,
-        :oauth2
+        :oauth2,
+        :httpoison
       ]
     ]
   end
@@ -42,6 +43,7 @@ defmodule Convo.Mixfile do
       {:phoenix_html, "~> 2.6"},
       {:cowboy, "~> 1.0"},
       {:oauth2, "~> 0.8"},
+      {:httpoison, "~> 0.10.0"},
       # Dev depencencies
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:mix_test_watch, "~> 0.2", only: :dev}
