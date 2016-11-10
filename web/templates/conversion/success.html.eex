@@ -1,2 +1,6 @@
 <h1>Your audio is getting uploaded!</h1>
 <p>Please check your provider profile</p>
+
+<%= render "form.html", changeset: @changeset,
+                        action: conversion_path(@conn, :create),
+                        csrf_token: get_csrf_token %>
