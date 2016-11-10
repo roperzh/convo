@@ -10,6 +10,7 @@ defmodule Convo do
     children = [
       # Start the endpoint when the application starts
       supervisor(Convo.Endpoint, []),
+      supervisor(Task.Supervisor, [[name: Convo.MP3Uploader, restart: :transient]])
       # Start your own worker by calling: Convo.Worker.start_link(arg1, arg2, arg3)
       # worker(Convo.Worker, [arg1, arg2, arg3]),
     ]

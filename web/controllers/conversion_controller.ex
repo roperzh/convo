@@ -21,15 +21,15 @@ defmodule Convo.ConversionController do
   def create(conn, %{"conversion" => %{"video_id" => video_id, "name" => name}}) do
     token = get_session(conn, :access_token)
 
-    Task.start(
-      fn ->
-        video_id
-        |> Youtube.download_mp3!
-        |> MixcloudApi.upload_mp3!(name, token)
-        |> Map.get(:body)
-        |> Poison.decode!
-      end
-    )
+    Task.Supervisor.start_child Convo.MP3Uploader, fn ->
+      :timer.sleep(1000)
+
+      video_id
+      |> Youtube.download_mp3!
+      |> MixcloudApi.upload_mp3!(name, token)
+      |> Map.get(:body)
+      |> Poison.decode!
+    end
 
     redirect(conn, to: conversion_path(conn, :success))
   end
