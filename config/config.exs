@@ -18,10 +18,8 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :convo, :http, HTTPoison
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Import environment specific config secret file
-# which should be versioned separately.
-import_config "#{Mix.env}.secret.exs"

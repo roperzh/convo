@@ -13,8 +13,10 @@ use Mix.Config
 # which you typically run after static files are built.
 config :convo, Convo.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [scheme: "https", host: "fathomless-river-77658.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -55,3 +57,8 @@ config :logger, level: :info
 #
 #     config :convo, Convo.Endpoint, server: true
 #
+
+config :convo, Mixcloud,
+  client_id: System.get_env("MIXCLOUD_CLIENT_ID"),
+  client_secret: System.get_env("MIXCLOUD_CLIENT_SECRET"),
+  redirect_uri: System.get_env("MIXCLOUD_REDIRECT_URI")
