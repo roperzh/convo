@@ -22,7 +22,7 @@ defmodule Convo.ConversionController do
     token = get_session(conn, :access_token)
 
     Task.Supervisor.start_child Convo.MP3Uploader, fn ->
-      :timer.sleep(1000)
+      :timer.sleep(10000)
 
       video_id
       |> Youtube.download_mp3!
