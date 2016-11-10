@@ -16,7 +16,8 @@ defmodule Convo.Router do
   scope "/", Convo do
     pipe_through :browser
 
-    resources "/conversions", ConversionController, only: [:create, :new, :show]
+    resources "/", ConversionController, only: [:create, :new, :index]
+    get "/success", ConversionController, :success
   end
 
   scope "/auth", Convo do

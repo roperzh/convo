@@ -3,15 +3,14 @@ defmodule Convo.ConversionController.NewTest do
 
   @moduletag controllers: :conversion
 
-  test "/conversions/new renders a form", %{conn: conn} do
-    conn = get conn, conversion_path(conn, :new)
-
+  test "/ renders a form", %{conn: conn} do
     body =
       conn
+      |> get(conversion_path(conn, :new))
       |> html_response(200)
 
     assert body =~ "New Conversion"
     assert body =~ "<form"
-    assert body =~ ~s(action="/conversions")
+    assert body =~ ~s(action="#{conversion_path(conn, :create)}")
   end
 end

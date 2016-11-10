@@ -11,9 +11,6 @@ defmodule Convo.ConversionController.CreateTest do
       }
     }
 
-    resp = html_response(conn, 201)
-
-    assert resp =~ "New song is on the way!"
-    assert resp =~ "Uploaded my song name"
+    assert redirected_to(conn) =~ conversion_path(conn, :success)
   end
 end

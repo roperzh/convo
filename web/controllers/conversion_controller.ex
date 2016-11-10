@@ -7,7 +7,6 @@ defmodule Convo.ConversionController do
   def create(conn, %{"conversion" => %{"video_id" => video_id, "name" => name}}) do
     token = get_session(conn, :access_token)
 
-
     Task.start(
       fn ->
         video_id
@@ -18,13 +17,20 @@ defmodule Convo.ConversionController do
       end
     )
 
-    conn
-    |> put_status(201)
-    |> render("show.html", video_id: video_id)
+    redirect(conn, to: conversion_path(conn, :success))
   end
 
   def new(conn, _params) do
     conn
     |> render("new.html", changeset: %Conversion{})
+  end
+
+  def index(conn, params) do
+    new(conn, params)
+  end
+
+  def success(conn, _params) do
+    conn
+    |> render("success.html")
   end
 end
