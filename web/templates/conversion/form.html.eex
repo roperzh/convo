@@ -1,0 +1,24 @@
+<form action="<%= @action %>" method="post">
+  <input name="_csrf_token" type="hidden" value="<%= @token %>">
+  <input name="_utf8" type="hidden" value="✓">
+
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="name" class="control-label">Name</label>
+    <input type="text" name="conversion[name]">
+  </div>
+
+  <div class="form-group">
+    <label for="video_id" class="control-label">Video</label>
+    <input type="text" name="conversion[video_id]">
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+</form>
