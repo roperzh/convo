@@ -9,8 +9,7 @@ defmodule Convo.ConversionController.SuccessTest do
       |> get(conversion_path(conn, :success))
       |> html_response(200)
 
-    assert body =~ "Your audio is getting uploaded!"
-    assert body =~ "Please check your provider profile"
+    assert body =~ "Your audio is getting uploaded!, Please check your provider profile"
   end
 
   test "/success shows the form to submit a new conversion", %{conn: conn} do
