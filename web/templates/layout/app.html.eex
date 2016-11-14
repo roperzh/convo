@@ -4,32 +4,38 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Convo uploads the audio of your YouTube video into MixCloud or SoundCloud">
+    <meta name="author" content="Roberto Dip">
 
-    <title>Hello Convo!</title>
+    <title>Convo | Online YouTube to MixCloud/SoundCloud converter</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
+    <div>
+      <header class="main-header-l">
+        <h1 class="brand">
+          <a href="/">
+            Convo
+          </a>
+        </h1>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+      <div class="main-content-l">
+        <header>
+          <h2 class="heading-two">Convert from YouTube to Mixcloud</h2>
+          <p class="subtitle">Just a YouTube URL!</p>
+        </header>
 
-    </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+        <main role="main">
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+      </div>
+
+      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    </div>
   </body>
 </html>

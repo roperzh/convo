@@ -8,17 +8,7 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <label for="name" class="control-label">Name</label>
-    <input type="text" name="conversion[name]">
-  </div>
+  <input type="text" name="conversion[video_id]">
 
-  <div class="form-group">
-    <label for="video_id" class="control-label">Video</label>
-    <input type="text" name="conversion[video_id]">
-  </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-  </div>
+  <%= submit "Convert" %>
 </form>
