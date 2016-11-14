@@ -3,7 +3,7 @@ defmodule Convo.Mocks.HTTP do
     body = %{
       "status" => "ok",
       "id" => "IKFr6m950cQ",
-      "title" => "",
+      "title" => "song name",
       "thumbnail" => "https://i.ytimg.com/vi/IKFr6m950cQ/hqdefault.jpg",
       "length" => 264,
       "artist" => "The XX ",

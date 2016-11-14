@@ -9,8 +9,8 @@ defmodule Convo.ConversionController.NewTest do
       |> get(conversion_path(conn, :new))
       |> html_response(200)
 
-    assert body =~ "New Conversion"
     assert body =~ "<form"
     assert body =~ ~s(action="#{conversion_path(conn, :create)}")
+    assert body =~ "conversion[video_url]"
   end
 end

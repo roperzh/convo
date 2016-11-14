@@ -6,7 +6,7 @@ defmodule Convo.Services.MixcloudApiTest do
   @moduletag services: :mixcloud
 
   test "#upload! uploads a mp3 file to mixcloud" do
-    mp3 = Youtube.download_mp3!("jhFDyDgMVUI")
+    mp3 = Youtube.download_mp3!("http://dlo2.yt-mp3.com/download/song.mp3")
     name = "my song name"
     token = "EXSzVGJxSwE6MpkfQZWTc5zdJrL7xWXL"
 

@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-  <input type="text" name="conversion[video_id]">
+  <input type="text" name="conversion[video_url]">
 
   <%= submit "Convert" %>
 </form>

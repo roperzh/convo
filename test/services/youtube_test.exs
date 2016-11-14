@@ -6,14 +6,16 @@ defmodule Convo.Services.YoutubeTest do
   @moduletag services: :youtube
 
   test "#get_mp3_link! returns a link able to download the video in mp3" do
-    link = Youtube.get_mp3_link!("jhFDyDgMVUI")
+    info = Youtube.get_mp3_info!("jhFDyDgMVUI")
 
-    assert link =~ "http://"
-    assert link =~ ".mp3"
+    assert info.link =~ "http://"
+    assert info.link =~ ".mp3"
+    assert info.name == "song name"
   end
 
   test "#download_mp3! downloads an mp3 from a video id" do
-    mp3_blob = Youtube.download_mp3!("jhFDyDgMVUI")
+    info = Youtube.get_mp3_info!("jhFDyDgMVUI")
+    mp3_blob = Youtube.download_mp3!(info.link)
 
     assert mp3_blob |> is_binary
   end
