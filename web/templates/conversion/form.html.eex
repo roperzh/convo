@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-  <input type="text" name="conversion[video_url]">
+  <input type="text" name="conversion[video_url]" autofocus>
 
   <%= submit "Convert" %>
 </form>
