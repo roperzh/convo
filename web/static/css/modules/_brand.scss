@@ -1,0 +1,16 @@
+// -------------------------------------------
+//   Brand Module
+// -------------------------------------------
+
+.brand {
+  font-size: 25px;
+  letter-spacing: 3px;
+
+  i {
+    float: left;
+
+    color: $cyan;
+    line-height: 35px;
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,16 @@
+// -------------------------------------------
+//   Main Content Layout
+// -------------------------------------------
+
+.main-content-l {
+  margin: 75px 0;
+  position: relative;
+  text-align: center;
+  z-index: 99;
+
+  .title-box {
+    .subtitle {
+      margin: 25px 0;
+    }
+  }
+}

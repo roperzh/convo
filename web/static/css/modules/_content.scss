@@ -1,0 +1,53 @@
+// -------------------------------------------
+//   Content Module
+// -------------------------------------------
+
+.content {
+  text-align: center;
+
+  .scrapped-page {
+    position: relative;
+
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    transition: all 2s ease-in;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+
+      width: 90%;
+      height: 1px;
+
+      background: $gray;
+    }
+
+    figure {
+      display: inline-block;
+      width: 20%;
+
+      vertical-align: top;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .scrapped-data {
+      display: inline-block;
+      width: 80%;
+    }
+
+    .og-list {
+      li {
+        margin: 5px 0;
+        font-size: 15px;
+      }
+    }
+  }
+}
