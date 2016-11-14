@@ -33,7 +33,8 @@ defmodule Convo.ConversionController do
         |> Map.get("v")
         |> Youtube.get_mp3_info!
 
-      video_info.link
+      video_info
+      |> Map.get(:link)
       |> Youtube.download_mp3!
       |> MixcloudApi.upload_mp3!(video_info.name, token)
     end
