@@ -24,6 +24,12 @@ defmodule Convo.ConnCase do
 
       # The default endpoint for testing
       @endpoint Convo.Endpoint
+
+      def login_user!(conn, provider \\ "testprovider") do
+        get conn, auth_path(conn, :callback, provider), %{
+          "code" => "some-token"
+        }
+      end
     end
   end
 
