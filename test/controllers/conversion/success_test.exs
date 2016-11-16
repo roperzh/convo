@@ -3,6 +3,10 @@ defmodule Convo.ConversionController.SuccessTest do
 
   @moduletag controllers: :conversion
 
+  setup %{conn: conn} do
+    {:ok, %{conn: login_user!(conn)}}
+  end
+
   test "/success shows a message letting the user know that the upload is being processed", %{conn: conn} do
     body =
       conn

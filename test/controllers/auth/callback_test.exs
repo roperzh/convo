@@ -4,9 +4,7 @@ defmodule Convo.AuthController.CallbackTest do
   @moduletag controllers: :auth
 
   test "GET /auth/testprovider/callback", %{conn: conn} do
-    conn = get conn, auth_path(conn, :callback, "testprovider"), %{
-      "code" => "some-token"
-    }
+    conn = login_user!(conn)
 
     assert get_session(conn, :access_token)
     assert redirected_to(conn) =~ "/"

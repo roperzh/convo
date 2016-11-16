@@ -1,0 +1,2 @@
+<h3>Login with:</h3>
+<a href='<%= auth_path(@conn, :index, "mixcloud") %>'>MixCloud</a>
