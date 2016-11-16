@@ -15,6 +15,17 @@ defmodule Convo.ConversionController.NewTest do
     assert body =~ "conversion[video_url]"
   end
 
+  test "/ renders logout button the user is authenticated", %{conn: conn} do
+    body =
+      conn
+      |> login_user!
+      |> get(conversion_path(conn, :new))
+      |> html_response(200)
+
+    assert body =~ "Log out"
+    assert body =~ auth_path(conn, :delete)
+  end
+
   test "/ shows login info if the user is not authenticated", %{conn: conn} do
     body =
       conn

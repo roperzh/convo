@@ -13,6 +13,12 @@ defmodule Convo.AuthController do
     |> redirect(to: "/")
   end
 
+  def delete(conn, _params) do
+    conn
+    |> delete_session(:access_token)
+    |> redirect(to: "/")
+  end
+
   defp invoque(module, func, params \\ []) do
     "Elixir.Oauth.#{String.capitalize(module)}"
     |> String.to_existing_atom

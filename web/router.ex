@@ -22,5 +22,6 @@ defmodule Convo.Router do
 
     get "/:provider", AuthController, :index
     get "/:provider/callback", AuthController, :callback
+    delete "/", AuthController, :delete
   end
 end

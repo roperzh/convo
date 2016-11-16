@@ -13,6 +13,7 @@
 
     <%= submit "Convert" %>
   </form>
+  <%= link "Log out", to: auth_path(@conn, :delete), method: "delete" %>
 <%= else %>
   <%= render Convo.AuthView, "new.html", assigns %>
 <%= end %>
