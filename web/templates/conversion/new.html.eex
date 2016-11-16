@@ -1,3 +1,1 @@
-<%= render "form.html", changeset: @changeset,
-                        action: conversion_path(@conn, :create),
-                        csrf_token: get_csrf_token %>
+<%= render "form.html", assigns %>

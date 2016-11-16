@@ -1,5 +1,5 @@
-<form action="<%= @action %>" method="post">
-  <input name="_csrf_token" type="hidden" value="<%= @csrf_token %>">
+<form action="<%= conversion_path(@conn, :create) %>" method="post">
+  <input name="_csrf_token" type="hidden" value="<%= get_csrf_token %>">
   <input name="_utf8" type="hidden" value="✓">
 
   <%= if @changeset.action do %>
