@@ -3,13 +3,12 @@
     <input name="_csrf_token" type="hidden" value="<%= get_csrf_token %>">
     <input name="_utf8" type="hidden" value="✓">
 
-    <%= if @changeset.action do %>
-      <div class="alert alert-danger">
-        <p>Oops, something went wrong! Please check the errors below.</p>
-      </div>
-    <% end %>
-
-    <input type="text" name="conversion[video_url]" autofocus>
+    <input
+      type="url"
+      name="conversion[video_url]"
+      placeholder="YouTube URL"
+      autofocus
+    >
 
     <%= submit "Convert" %>
   </form>

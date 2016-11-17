@@ -8,11 +8,12 @@
     <meta name="author" content="Roberto Dip">
 
     <title>Convo | Online YouTube to MixCloud/SoundCloud converter</title>
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/2e9bb4b31e/UntitledProject1/style.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <div>
+    <div class="wrapper-l">
       <header class="main-header-l">
         <h1 class="brand">
           <a href="/">
@@ -26,8 +27,7 @@
 
       <div class="main-content-l">
         <header>
-          <h2 class="heading-two">Convert from YouTube to Mixcloud</h2>
-          <p class="subtitle">Just a YouTube URL!</p>
+          <h2 class="heading-two"><i class="icon-youtube"></i> to audio stream converter</h2>
         </header>
 
         <main role="main">

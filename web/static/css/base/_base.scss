@@ -10,6 +10,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
   font-family: $base-font;
   box-sizing: border-box;
 }
@@ -17,6 +18,11 @@ html, body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 ul {

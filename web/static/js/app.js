@@ -22,17 +22,18 @@ import "phoenix_html"
 
 
 var dots=[];
-var numDots = 100;
-var width = window.innerWidth - 30;
-var height = window.innerHeight - 30;
+var numDots = 150;
+var width = window.innerWidth;
+var height = window.innerHeight;
 
 for(var i=0 ; i<numDots ; i++){
   dots.push({
-    x : Math.random() * width,
-    y : Math.random() * height
+    x : (Math.random() * width * 100) / width,
+    y : (Math.random() * height * 100) / height
   })
 }
 
+console.table(dots);
 var validColours = {
   1: "rgb(87, 141, 200)",
   2: "rgb(233, 103, 94)",
@@ -43,18 +44,24 @@ var validColours = {
 
 function draw() {
   var div = document.createElement('div')
-  div.style.overflow = "hidden";
 
-  var j, dot;
-  for(j = 0; j < numDots; j++) {
+  Object.assign(div.style, {
+    overflow: "hidden",
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0
+  });
+
+  for(var j = 0; j < numDots; j++) {
     var dot = dots[j];
     var color = validColours[Math.floor(Math.random()*5)];
 
     var span = document.createElement('span');
     span.className = "dot";
     span.style.backgroundColor = color;
-    span.style.top = dot.y + "px";
-    span.style.left = dot.x + "px";
+    span.style.top = dot.y + "%";
+    span.style.left = dot.x + "%";
 
     div.appendChild(span);
   }

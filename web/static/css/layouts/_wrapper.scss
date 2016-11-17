@@ -1,13 +1,14 @@
 // -------------------------------------------
-//   Main Header Layout
+//   Grapper layout
 // -------------------------------------------
 
-.main-header-l {
-  height: 50px;
-  padding: 10px;
+.wrapper-l {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100%;
 
   @include breakpoint(small) {
-    text-align: center;
+    padding: 0 30px;
   }
 }
-

@@ -10,12 +10,18 @@ form {
     height: 50px;
     background-color: $white;
     outline: none;
+    border: 1px solid $gray;
   }
 
-  [type="text"] {
+  [type="text"], [type="url"] {
     width: 330px;
     padding: 0 0 0 20px;
     line-height: 50px;
+
+    @include breakpoint(small) {
+      width: 80%;
+      text-align: center;
+    }
   }
 
   [type="submit"] {
@@ -24,5 +30,9 @@ form {
     color: $red;
     text-transform: uppercase;
     font-weight: bold;
+
+    @include breakpoint(small) {
+      width: 80%;
+    }
   }
 }

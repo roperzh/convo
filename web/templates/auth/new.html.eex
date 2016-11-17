@@ -1,2 +1,12 @@
-<h3>Login with:</h3>
-<a href='<%= auth_path(@conn, :index, "mixcloud") %>'>MixCloud</a>
+<p class="subtitle">
+  Before we proceed, please login with your favourite streaming service in
+  order to upload the audio in your account.
+</p>
+
+<ul>
+  <li>
+    <a href='<%= auth_path(@conn, :index, "mixcloud") %>' class="button">
+      <i class="icon-mixcloud"></i> MixCloud
+    </a>
+  </li>
+</ul>
